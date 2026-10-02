@@ -74,3 +74,16 @@
 .photo-upload:before{content:"📷 Escolher fotos do ambiente";display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--purple),var(--purple2));color:#fff;padding:13px 18px;border-radius:12px;font-weight:900;cursor:pointer;box-shadow:0 8px 20px rgba(48,39,126,.2);transition:.2s}
 .photo-upload:hover:before{transform:translateY(-2px);box-shadow:0 11px 25px rgba(48,39,126,.28)}
 .photo-upload label:first-child{display:block}
+
+/* PROJETOS RECENTES — mosaico enviado pelo cliente */
+.recent-showcase{background:linear-gradient(135deg,#101018 0%,#30277e 58%,#5147a8 100%);color:#fff;position:relative;overflow:hidden}
+.recent-showcase .section-head{max-width:820px}
+.recent-showcase .section-head h2{color:#fff}
+.recent-showcase .section-head p:last-child{color:#ddd}
+.recent-mosaic{background:#fff;padding:10px;border-radius:28px;box-shadow:0 24px 60px rgba(0,0,0,.28);overflow:hidden}
+.recent-mosaic img{width:100%;display:block;border-radius:20px;aspect-ratio:1500/1170;object-fit:cover}
+@media(max-width:560px){.recent-mosaic{padding:6px;border-radius:20px}.recent-mosaic img{border-radius:15px}}
+/* BOTAO DE FOTOS — area clicavel real */
+.photo-upload:before{display:none}
+.photo-upload>label:first-child{display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--purple),var(--purple2));color:#fff;padding:13px 18px;border-radius:12px;font-weight:900;cursor:pointer;box-shadow:0 8px 20px rgba(48,39,126,.2);transition:.2s;margin-bottom:8px}
+.photo-upload>label:first-child:hover{transform:translateY(-2px);box-shadow:0 11px 25px rgba(48,39,126,.28)}
