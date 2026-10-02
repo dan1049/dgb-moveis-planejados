@@ -94,3 +94,7 @@ display:block !important;
 min-height:576px !important;
 padding:0 !important;
 }
+
+
+/* SUBSTITUI IMAGEM PRINCIPAL DO HERO */
+.hero-card img{content:url("banner_dgb.webp") !important;}
