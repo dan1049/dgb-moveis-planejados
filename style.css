@@ -31,3 +31,18 @@
 .photo-card:after{content:"";position:absolute;left:0;top:0;width:58px;height:5px;background:linear-gradient(90deg,var(--orange),var(--teal));border-radius:0 0 8px 0}
 @media(max-width:850px){.photo-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.new-gallery .section-head{padding:22px 18px;border-radius:22px}.category-tabs{border-radius:18px;padding:7px}.category-tab{padding:9px 13px;font-size:13px}.photo-grid{grid-template-columns:1fr 1fr;gap:13px}.photo-card{border-radius:19px}.photo-card img{height:190px}.photo-card .caption{padding:11px 12px 14px;font-size:13px}}
+
+/* NOVOS PROJETOS — acabamento premium e movimento */
+.new-gallery .section-head h2{letter-spacing:-.8px}
+.new-gallery .section-head p:last-child{font-size:17px}
+.photo-grid{perspective:1200px}
+.photo-card{animation:galleryFloat 5s ease-in-out infinite;will-change:transform}
+.photo-card:nth-child(2){animation-delay:.4s}.photo-card:nth-child(3){animation-delay:.8s}.photo-card:nth-child(4){animation-delay:1.2s}.photo-card:nth-child(5){animation-delay:1.6s}.photo-card:nth-child(6){animation-delay:2s}
+.photo-card img{transition:transform .55s ease,filter .55s ease}
+.photo-card:hover img{transform:scale(1.06);filter:saturate(1.08)}
+@keyframes galleryFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+.photo-card .caption{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.photo-card .caption:after{content:"→";display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:#f4f2ff;color:var(--purple);font-size:18px}
+.category-tabs{position:sticky;top:82px;z-index:8;backdrop-filter:blur(12px)}
+@media(max-width:850px){.category-tabs{top:76px}}
+@media(max-width:560px){.category-tabs{top:72px}.photo-card{animation:none}}
