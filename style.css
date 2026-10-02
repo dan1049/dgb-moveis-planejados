@@ -56,3 +56,21 @@
 .photo-preview{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
 .photo-preview img{width:100%;height:110px;object-fit:cover;border-radius:12px;border:2px solid #fff;box-shadow:0 5px 16px rgba(16,16,24,.12)}
 @media(max-width:560px){.photo-preview img{height:90px}}
+
+/* GALERIA — filtros mais limpos */
+.category-tabs{justify-content:center;gap:8px;padding:10px}
+.category-tab{min-width:105px;text-align:center;letter-spacing:.1px}
+.category-tab.active{transform:translateY(-1px)}
+.photo-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.photo-card{animation:none}
+.photo-card:nth-child(3n+2){transform:translateY(8px)}
+.photo-card:hover{transform:translateY(-6px)}
+@media(max-width:850px){.photo-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.photo-card:nth-child(3n+2){transform:none}}
+@media(max-width:560px){.category-tabs{justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap;scrollbar-width:none}.category-tabs::-webkit-scrollbar{display:none}.category-tab{min-width:auto;white-space:nowrap}.photo-grid{grid-template-columns:1fr 1fr;gap:13px}}
+/* BOTAO DE FOTOS DO ORCAMENTO */
+.photo-upload{padding:18px}
+.photo-upload>label:first-child{margin-bottom:8px}
+.photo-upload input[type="file"]{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+.photo-upload:before{content:"📷 Escolher fotos do ambiente";display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--purple),var(--purple2));color:#fff;padding:13px 18px;border-radius:12px;font-weight:900;cursor:pointer;box-shadow:0 8px 20px rgba(48,39,126,.2);transition:.2s}
+.photo-upload:hover:before{transform:translateY(-2px);box-shadow:0 11px 25px rgba(48,39,126,.28)}
+.photo-upload label:first-child{display:block}
