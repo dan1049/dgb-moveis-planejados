@@ -81,3 +81,16 @@ transform:none !important;
 border-radius:0 !important;
 box-shadow:none !important;
 }
+/* BANNER NOVO - SUBSTITUI O HERO ANTIGO */
+.hero{
+background:url("banner_dgb.webp") center/cover no-repeat !important;
+min-height:576px !important;
+}
+.hero-video,.hero:after,.hero-grid>div:first-child,.hero-card{
+display:none !important;
+}
+.hero-grid{
+display:block !important;
+min-height:576px !important;
+padding:0 !important;
+}
