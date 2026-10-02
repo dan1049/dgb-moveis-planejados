@@ -98,3 +98,7 @@ padding:0 !important;
 
 /* SUBSTITUI IMAGEM PRINCIPAL DO HERO */
 .hero-card img{content:url("banner_dgb.webp") !important;}
+
+/* SUBSTITUI O VÍDEO DO HERO PELO NOVO BANNER */
+.hero::before{content:"";position:absolute;inset:0;background:url("banner_dgb.webp") center/cover no-repeat;z-index:0}
+.hero-video{opacity:0 !important}
