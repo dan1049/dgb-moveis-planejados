@@ -116,7 +116,6 @@
 .recent-card-top strong{font-size:16px;letter-spacing:.2px}
 .recent-card-top strong:before{content:"";display:inline-block;width:8px;height:8px;background:#f5a800;border-radius:50%;margin-right:8px;vertical-align:2px;box-shadow:0 0 0 5px rgba(245,168,0,.12)}
 .recent-mosaic{position:relative;border-radius:24px;box-shadow:inset 0 0 0 1px rgba(48,39,126,.10),0 12px 28px rgba(16,16,24,.12);overflow:hidden;background:#101018}
-.recent-mosaic:after{content:"10 PROJETOS RECENTES  •  DGB MÓVEIS PLANEJADOS";position:absolute;left:18px;bottom:18px;padding:10px 14px;border-radius:999px;background:rgba(16,16,24,.78);border:1px solid rgba(255,255,255,.2);color:#fff;font-size:11px;font-weight:900;letter-spacing:.7px;backdrop-filter:blur(8px);pointer-events:none}
 .recent-mosaic img{aspect-ratio:1500/1170;object-fit:cover;transition:transform .45s ease,filter .45s ease}
 .recent-mosaic:hover img{transform:scale(1.012);filter:saturate(1.04)}
 .recent-card-bottom{padding:18px 12px 4px}
