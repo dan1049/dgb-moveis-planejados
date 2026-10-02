@@ -11,7 +11,7 @@
 @media(max-width:800px){.hero{min-height:680px}.hero-grid{min-height:680px;padding:52px 0}.hero::after{font-size:170px;right:-10px;bottom:-45px}}
 
 /* VÍDEO DE FUNDO DO HERO */
-.hero{min-height:620px;background:#09090d}.hero-bg-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:.42;filter:saturate(.9)}.hero-overlay{z-index:1;background:linear-gradient(90deg,rgba(8,8,12,.82),rgba(20,18,42,.58),rgba(48,39,126,.48))}.hero-grid{z-index:2}.hero::before,.hero::after{z-index:1}@media(max-width:800px){.hero-bg-video{opacity:.30}}
+.hero{min-height:620px;background:#09090d}.hero-bg-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:.42;filter:saturate(.9)}.hero-overlay{z-index:1;background:linear-gradient(90deg,rgba(8,8,12,.54),rgba(20,18,42,.34),rgba(48,39,126,.22))}.hero-grid{z-index:2}.hero::before,.hero::after{z-index:1}@media(max-width:800px){.hero-bg-video{opacity:.40}.hero-overlay{background:linear-gradient(90deg,rgba(8,8,12,.46),rgba(20,18,42,.28),rgba(48,39,126,.18))}}
 
 /* NOVOS PROJETOS — visual moderno DGB */
 .new-gallery{position:relative;overflow:hidden;background:linear-gradient(135deg,#f7f5ff 0%,#eefbfa 55%,#fff7e5 100%)}
