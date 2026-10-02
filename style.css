@@ -180,7 +180,7 @@
 .brand-mark{position:relative;width:132px;height:46px;display:block}
 .brand-mark i{position:absolute;top:2px;width:54px;height:42px;display:grid;place-items:center;clip-path:polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%);font-style:normal;font-weight:1000;font-size:25px;line-height:1;box-sizing:border-box}
 .brand-mark i:nth-child(1){left:0;background:#5147a8;color:#fff;z-index:2}
-.brand-mark i:nth-child(2){left:39px;background:transparent;color:var(--orange);border:0;z-index:3}
+.brand-mark i:nth-child(2){left:39px;top:-13px;background:transparent;color:var(--orange);border:0;z-index:3}
 .brand-mark i:nth-child(2):before{content:"";position:absolute;inset:1px;background:#101018;clip-path:polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%);z-index:-1}
 .brand-mark i:nth-child(2):after{content:"";position:absolute;inset:-1px;clip-path:polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%);background:var(--orange);z-index:-2}
 .brand-mark i:nth-child(3){left:78px;background:#63c5c1;color:#fff;z-index:2}
@@ -189,6 +189,6 @@
 @media(max-width:560px){
  .brand-mark{width:112px;height:39px}
  .brand-mark i{width:46px;height:36px;font-size:21px}
- .brand-mark i:nth-child(2){left:33px}.brand-mark i:nth-child(3){left:66px}
+ .brand-mark i:nth-child(2){left:33px;top:-11px}.brand-mark i:nth-child(3){left:66px}
  .brand-name{font-size:7.5px;letter-spacing:2.2px}
 }
