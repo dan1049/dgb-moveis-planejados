@@ -129,3 +129,7 @@
  .recent-mosaic:after{left:10px;bottom:10px;padding:8px 10px;font-size:9px;letter-spacing:.4px}
  .recent-card-bottom{padding:14px 7px 4px}
 }
+
+/* FILTRO DA GALERIA — esconder categorias corretamente */
+.photo-card.is-hidden{display:none !important;visibility:hidden !important;pointer-events:none !important}
+.photo-grid{align-items:start}
