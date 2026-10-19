@@ -1,0 +1,23 @@
+{
+  "name": "dgb-medidas",
+  "version": "1.0.0",
+  "private": true,
+  "description": "DGB Medidas - levantamento de medidas para Android, iPhone e iPad",
+  "scripts": {
+    "web:check": "node -e \"const fs=require('fs');for(const f of ['dgb-medidas/index.html','dgb-medidas/manifest.webmanifest','dgb-medidas/service-worker.js'])if(!fs.existsSync(f))throw new Error('Arquivo ausente: '+f);console.log('Arquivos web encontrados')\"",
+    "cap:init": "npx cap init \"DGB Medidas\" com.dgbmoveisplanejados.medidas --web-dir dgb-medidas",
+    "android:add": "npx cap add android",
+    "ios:add": "npx cap add ios",
+    "cap:sync": "npx cap sync",
+    "cap:open:android": "npx cap open android",
+    "cap:open:ios": "npx cap open ios"
+  },
+  "dependencies": {
+    "@capacitor/android": "^7.4.3",
+    "@capacitor/ios": "^7.4.3",
+    "@capacitor/core": "^7.4.3"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^7.4.3"
+  }
+}
