@@ -16,7 +16,7 @@ body{background:#ededed;color:#151515;font-family:Arial,system-ui,sans-serif}hea
 /* Visual inspirado em apps de levantamento de obra, com identidade própria DGB */
 body{background:#ededed;color:#111;font-family:Arial,system-ui,sans-serif;padding-bottom:76px}
 .appbar{display:flex;align-items:center;gap:12px;padding:16px 18px 14px;background:#fff;color:#111;border:0;border-bottom:5px solid transparent;border-image:linear-gradient(90deg,#1d73c9,#2ab99a,#7b4bc4,#f1b52b) 1;box-shadow:0 2px 5px #0001}
-.brandmark{width:42px;height:42px;border-radius:12px;background:#111;color:#fff;display:grid;place-items:center;font-size:23px;flex:none}
+.brandmark{width:60px;height:46px;border-radius:0;background:transparent;display:flex;align-items:center;justify-content:center;gap:2px;flex:none}.dgb-letter{width:19px;height:23px;display:grid;place-items:center;color:#fff;font-weight:900;font-size:13px;clip-path:polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%);text-shadow:0 1px 1px #0005}.dgb-letter.d{background:#7650a5;transform:translateY(-5px)}.dgb-letter.g{background:#35b99a;transform:translateY(5px)}.dgb-letter.b{background:#e9ad25;transform:translateY(-5px)}
 .brandtext{flex:1;min-width:0}.appbar h1{margin:0;font-size:22px;line-height:1.1}.appbar p{margin:5px 0 0;color:#666;font-size:10px;letter-spacing:.45px}.iconbtn{width:44px;height:44px;min-height:44px;padding:0;border:0;background:transparent;font-size:25px}
 .wrap{max-width:900px;padding:25px 16px 95px}.homeheading{align-items:center;margin:4px 0 22px}.homeheading h2{font-size:22px;line-height:1.2}.projectcount{font-size:12px;color:#666;white-space:nowrap}
 .projectgrid{gap:16px}.projectcard{position:relative;box-shadow:0 1px 2px #0001}.projectpreview{height:180px;background-color:#f8f8f8;background-image:linear-gradient(#00000008 1px,transparent 1px),linear-gradient(90deg,#00000008 1px,transparent 1px);background-size:5px 5px;position:relative}.projectpreview .emptyproject{display:flex;flex-direction:column;align-items:center;gap:8px;color:#1687b9;font-size:14px;font-weight:600}.projectpreview img{object-fit:cover}.projectmeta{padding:12px 13px 14px}.projectmeta strong{font-size:20px;min-height:24px}.projectmeta small{font-size:13px;color:#666;margin-top:9px}.projectmeta button{margin-top:12px}
@@ -49,7 +49,7 @@ button{touch-action:manipulation}
 <link rel="apple-touch-icon" href="./icon.svg">
 </head>
 <body>
-<header class="appbar"><div class="brandmark">📐</div><div class="brandtext"><h1>DGB Medidas</h1><p>PROJETOS E ESPAÇOS DE TRABALHO</p></div><button class="iconbtn" onclick="show('works')" aria-label="Todos os projetos">☰</button></header>
+<header class="appbar"><div class="brandmark" aria-label="Logo DGB"><span class="dgb-letter d">D</span><span class="dgb-letter g">G</span><span class="dgb-letter b">B</span></div><div class="brandtext"><h1>DGB Medidas</h1><p>PROJETOS E ESPAÇOS DE TRABALHO</p></div><button class="iconbtn" onclick="show('works')" aria-label="Todos os projetos">☰</button></header>
 <main class="wrap">
 <section id="home">
 <div class="homeheading"><h2>Projetos e espaços de trabalho</h2><span class="projectcount" id="projectCount">0 projetos</span></div><div id="recent" class="projectgrid muted">Nenhuma obra cadastrada. Toque em + para criar um projeto.</div><div class="homefooter"><button onclick="show('works')">☷ Todos os projetos</button></div><button class="floatingadd" onclick="show('new')" aria-label="Novo projeto">＋</button>
