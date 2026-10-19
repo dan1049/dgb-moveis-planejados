@@ -1,0 +1,21 @@
+{
+  "id": "/dgb-medidas/",
+  "name": "DGB Medidas",
+  "short_name": "DGB Medidas",
+  "description": "Levantamento de medidas de obras para DGB Móveis Planejados.",
+  "lang": "pt-BR",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f5f7fa",
+  "theme_color": "#087fbd",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
