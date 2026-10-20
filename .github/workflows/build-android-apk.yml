@@ -1,4 +1,4 @@
-name: Build DGB Medidas APK
+name: Build DGB Medidas Android
 
 on:
   workflow_dispatch:
@@ -16,7 +16,7 @@ permissions:
   contents: read
 
 jobs:
-  build-apk:
+  build-android:
     runs-on: ubuntu-latest
     steps:
       - name: Baixar código
@@ -45,16 +45,22 @@ jobs:
       - name: Sincronizar aplicativo
         run: npx cap sync android
 
-      - name: Gerar APK de instalação
+      - name: Gerar APK de teste
         working-directory: android
         run: |
           chmod +x gradlew
           ./gradlew assembleDebug
 
-      - name: Disponibilizar APK para baixar
+      - name: Gerar Android App Bundle de teste
+        working-directory: android
+        run: ./gradlew bundleDebug
+
+      - name: Disponibilizar APK e AAB para baixar
         uses: actions/upload-artifact@v4
         with:
-          name: DGB-Medidas-APK
-          path: android/app/build/outputs/apk/debug/app-debug.apk
+          name: DGB-Medidas-Android
+          path: |
+            android/app/build/outputs/apk/debug/app-debug.apk
+            android/app/build/outputs/bundle/debug/app-debug.aab
           if-no-files-found: error
           retention-days: 14
