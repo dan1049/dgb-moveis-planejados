@@ -18,7 +18,7 @@ main{padding:44px 20px 70px}.intro{text-align:center;margin-bottom:28px}.intro h
 <body>
 <header class="top"><div class="nav"><a class="brand" href="index.html"><b>DGB</b> MÓVEIS PLANEJADOS</a><a class="back" href="index.html">← Voltar ao site</a><a href="#produtos">Produtos</a></div></header>
 <section class="hero"><div class="wrap"><div class="eyebrow">LOJA DGB • FABRICAÇÃO PRÓPRIA</div><h1>Peças funcionais,<br>com personalidade.</h1><p>Começamos nossa loja com criados-mudos em formato S, produzidos em MDF pela DGB Móveis Planejados em Echaporã–SP.</p><div class="notice">Unidade sem fechadura: R$ 189,90 • com fechadura: R$ 199,90 • Par sem fechadura: R$ 359,99 • com fechadura: R$ 369,99.</div></div></section>
-<main id="produtos"><div class="wrap"><div class="intro"><div class="eyebrow">PRIMEIROS PRODUTOS</div><h2>Criados-mudos em S e Z</h2><p>Escolha o formato, com ou sem fechadura, e compre individualmente ou em par.</p></div>
+<main id="produtos"><div class="wrap"><div class="intro"><div class="eyebrow">PRIMEIROS PRODUTOS</div><h2>Criados-mudos em S e Z</h2><p>Escolha S ou Z, com ou sem fechadura, e defina quantas unidades ou pares deseja.</p></div>
 <div class="products">
 <article class="product"><div class="visual"><div class="mock" role="img" aria-label="Modelo ilustrativo de criado-mudo em MDF branco com gaveta"><div class="topboard"></div><div class="side"></div><div class="bodyboard"></div><div class="drawer"></div><div class="handle"></div><div class="bottomboard"></div></div></div><div class="product-info"><span class="tag">MODELO S</span><h3>Criado-mudo formato S</h3><p>Estrutura em MDF branco.</p><ul class="features"><li>Opção com ou sem fechadura</li><li>Venda individual ou em par S + Z</li><li>Preço varia conforme a opção de fechadura</li></ul></div></article>
 <article class="product"><div class="visual no-drawer"><div class="mock" role="img" aria-label="Modelo ilustrativo de criado-mudo em MDF branco formato Z"><div class="topboard"></div><div class="side"></div><div class="bodyboard"></div><div class="bottomboard"></div></div></div><div class="product-info"><span class="tag">MODELO Z</span><h3>Criado-mudo formato Z</h3><p>Estrutura em MDF branco, ideal para combinar com o modelo S.</p><ul class="features"><li>Opção com ou sem fechadura</li><li>Venda individual ou em par S + Z</li><li>Preço varia conforme a opção de fechadura</li></ul></div></article>
@@ -26,41 +26,63 @@ main{padding:44px 20px 70px}.intro{text-align:center;margin-bottom:28px}.intro h
 <section class="how" id="escolher"><h3>Escolha sua opção</h3>
 <div class="choice-grid"><label for="format-choice">Formato</label><select id="format-choice"><option value="S">Criado-mudo S</option><option value="Z">Criado-mudo Z</option><option value="par">Par: 1 S + 1 Z</option></select>
 <label for="lock-choice">Fechadura</label><select id="lock-choice"><option value="com">Com fechadura</option><option value="sem">Sem fechadura</option></select>
-<label for="quantity-choice">Compra</label><select id="quantity-choice"><option value="unit">Individual — 1 unidade</option><option value="pair">Par S + Z</option></select>
+<label for="quantity-choice">Tipo de compra</label><select id="quantity-choice"><option value="unit">Unidade — modelo S ou Z</option><option value="pair">Par — 1 S + 1 Z</option></select>
+<label for="count-choice">Quantidade</label><input id="count-choice" type="number" min="1" max="99" step="1" value="1" inputmode="numeric" style="padding:12px;border:1px solid #d8d6e2;border-radius:10px;font:inherit;width:100%" aria-label="Quantidade de unidades ou pares">
 <div class="price" id="selected-price">R$ 189,90<small>Preço por unidade</small></div><a class="btn" id="order-link" href="https://wa.me/5518997114556" target="_blank" rel="noopener">Pedir pelo WhatsApp</a>
 <button class="btn" id="checkout-button" type="button" style="margin-top:10px;background:#30277e;color:#fff;border:0;cursor:pointer">Pagar online com Mercado Pago</button>
-<p id="checkout-status" class="choice-note" role="status" aria-live="polite">Pagamento online será ativado após configurar a credencial segura na hospedagem.</p>
+<p id="checkout-status" class="choice-note" role="status" aria-live="polite">Se o pagamento apresentar erro, a integração ainda precisa ser configurada e testada.</p>
 <p class="choice-note">Sem fechadura: unidade R$ 189,90 e par S + Z R$ 359,99. Com fechadura: unidade R$ 199,90 e par S + Z R$ 369,99.</p></div>
 <style>.choice-grid{display:grid;grid-template-columns:140px minmax(0,1fr);gap:12px;align-items:center;max-width:560px}.choice-grid label{font-weight:800}.choice-grid select{padding:12px;border:1px solid #d8d6e2;border-radius:10px;background:#fff;font:inherit}.choice-note{font-size:13px;color:#62616d}.choice-grid .price{grid-column:1/-1;margin-bottom:0}@media(max-width:480px){.choice-grid{grid-template-columns:1fr;gap:7px}}</style>
-<script>(function(){const format=document.getElementById('format-choice'),lock=document.getElementById('lock-choice'),quantity=document.getElementById('quantity-choice'),price=document.getElementById('selected-price'),link=document.getElementById('order-link');function update(){if(format.value==='par')quantity.value='pair';const pair=quantity.value==='pair';const locked=lock.value==='com';const amount=pair?(locked?'R$ 369,99':'R$ 359,99'):(locked?'R$ 199,90':'R$ 189,90');price.innerHTML=amount+'<small>'+(pair?'Par com 1 modelo S + 1 modelo Z':'Preço por unidade')+'</small>';const model=pair?'Par S + Z':'Modelo '+format.value;const lockText=locked?'com fechadura':'sem fechadura';link.href='https://wa.me/5518997114556?text='+encodeURIComponent('Olá, DGB! Quero pedir: '+model+', '+lockText+'. Preço: '+amount+'.');}format.addEventListener('change',update);lock.addEventListener('change',update);quantity.addEventListener('change',update);
+<script>(function(){
+const format=document.getElementById('format-choice');
+const lock=document.getElementById('lock-choice');
+const quantity=document.getElementById('quantity-choice');
+const count=document.getElementById('count-choice');
+const price=document.getElementById('selected-price');
+const link=document.getElementById('order-link');
 const checkoutButton=document.getElementById('checkout-button');
 const checkoutStatus=document.getElementById('checkout-status');
+const money=n=>n.toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
+function getOrder(){
+ const pair=quantity.value==='pair';
+ const locked=lock.value==='com';
+ const qty=Math.max(1,Math.min(99,parseInt(count.value||'1',10)||1));
+ count.value=qty;
+ const unit=pair?(locked?369.99:359.99):(locked?199.90:189.90);
+ return {pair,locked,qty,unit,total:unit*qty};
+}
+function update(){
+ const o=getOrder();
+ format.disabled=o.pair;
+ if(o.pair) format.value='par';
+ else if(format.value==='par') format.value='S';
+ const model=o.pair?'Par S + Z':'Modelo '+format.value;
+ const lockText=o.locked?'com fechadura':'sem fechadura';
+ price.innerHTML=money(o.total)+'<small>'+o.qty+' '+(o.pair?'par(es)':'unidade(s)')+' × '+money(o.unit)+(o.pair?' — cada par contém 1 S + 1 Z':'')+'</small>';
+ link.href='https://wa.me/5518997114556?text='+encodeURIComponent('Olá, DGB! Quero pedir: '+o.qty+' '+(o.pair?'par(es) S + Z':'unidade(s) do modelo '+format.value)+', '+lockText+'. Total: '+money(o.total)+'.');
+}
+format.addEventListener('change',()=>{if(format.value==='par')quantity.value='pair';update();});
+quantity.addEventListener('change',()=>{if(quantity.value==='pair')format.value='par';else if(format.value==='par')format.value='S';update();});
+lock.addEventListener('change',update);count.addEventListener('input',update);
 checkoutButton.addEventListener('click',async function(){
-  checkoutButton.disabled=true;
-  checkoutButton.style.opacity='.7';
-  checkoutStatus.textContent='Preparando pagamento seguro...';
-  try {
-    const response=await fetch('/.netlify/functions/create-preference',{
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({format:format.value,lock:lock.value,quantity:quantity.value})
-    });
-    const data=await response.json().catch(()=>({}));
-    if(!response.ok || !data.checkout_url) throw new Error(data.error||'Não foi possível iniciar o pagamento.');
-    window.location.href=data.checkout_url;
-  } catch(error) {
-    checkoutStatus.textContent=error.message||'Não foi possível iniciar o pagamento. Tente novamente.';
-  } finally {
-    checkoutButton.disabled=false;
-    checkoutButton.style.opacity='1';
-  }
+ const o=getOrder();
+ checkoutButton.disabled=true;checkoutButton.style.opacity='.7';
+ checkoutStatus.textContent='Preparando pagamento seguro...';
+ try{
+  const response=await fetch('/.netlify/functions/create-preference',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({format:format.value,lock:lock.value,quantity:quantity.value,count:o.qty})});
+  const data=await response.json().catch(()=>({}));
+  if(!response.ok||!data.checkout_url)throw new Error(data.error||'Não foi possível iniciar o pagamento.');
+  window.location.href=data.checkout_url;
+ }catch(error){checkoutStatus.textContent=error.message||'Não foi possível iniciar o pagamento. Tente novamente.';}
+ finally{checkoutButton.disabled=false;checkoutButton.style.opacity='1';}
 });
 const params=new URLSearchParams(window.location.search);
 const payment=params.get('pagamento');
-if(payment==='sucesso') checkoutStatus.textContent='O Mercado Pago informou retorno de pagamento aprovado. A confirmação definitiva deve ser verificada na conta Mercado Pago.';
-else if(payment==='pendente') checkoutStatus.textContent='Seu pagamento está pendente de confirmação no Mercado Pago.';
-else if(payment==='falhou') checkoutStatus.textContent='O pagamento não foi concluído. Você pode tentar novamente ou pedir pelo WhatsApp.';
-update();})();</script>
+if(payment==='sucesso')checkoutStatus.textContent='O Mercado Pago retornou para a página. Confira a confirmação do pagamento na sua conta Mercado Pago.';
+else if(payment==='pendente')checkoutStatus.textContent='Seu pagamento está pendente de confirmação no Mercado Pago.';
+else if(payment==='falhou')checkoutStatus.textContent='O pagamento não foi concluído. Você pode tentar novamente ou pedir pelo WhatsApp.';
+update();
+})();</script>
 <section class="how"><h3>Como comprar nesta primeira etapa</h3><p>Você já pode solicitar pelo WhatsApp. O botão de pagamento online depende da configuração segura das credenciais do Mercado Pago. O cálculo automático de frete ainda será integrado.</p></section>
 </div></main>
 <footer class="footer">DGB Móveis Planejados • Echaporã–SP • <a href="https://www.instagram.com/dgbmoveisplanejados10/" target="_blank" rel="noopener">@dgbmoveisplanejados10</a></footer>
