@@ -31,6 +31,12 @@ export default async (request) => {
   const format = body?.format === "Z" ? "Z" : "S";
   const lock = body?.lock === "com" ? "com" : "sem";
   const pair = body?.quantity === "pair" || body?.format === "par";
+  const requestedCount = Number(body?.count ?? 1);
+  if (!Number.isInteger(requestedCount) || requestedCount < 1 || requestedCount > 99) {
+    return new Response(JSON.stringify({ error: "Escolha uma quantidade entre 1 e 99." }), {
+      status: 400, headers: { "content-type": "application/json; charset=utf-8" }
+    });
+  }
   const key = `${pair ? "pair" : "unit"}_${lock}`;
   const product = PRODUCTS[key];
   const siteUrl = "https://dgbmoveisplanejados.com.br";
@@ -39,7 +45,7 @@ export default async (request) => {
     items: [{
       id: key,
       title: product.title + (pair ? "" : ` — formato ${format}`),
-      quantity: 1,
+      quantity: requestedCount,
       currency_id: "BRL",
       unit_price: product.unit_price
     }],
